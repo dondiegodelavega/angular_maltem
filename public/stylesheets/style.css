@@ -1,0 +1,17 @@
+#mainImage {
+    margin: 0 auto;
+}
+
+#pokemonsContainer{
+    overflow-y: scroll;
+    height : 100vh;
+    min-height: 767px;
+}
+
+#pokemonCard{
+    cursor: pointer;
+}
+
+#pokemonName{
+    text-align: center;
+}

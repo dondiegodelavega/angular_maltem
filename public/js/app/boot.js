@@ -1,0 +1,11 @@
+"use strict";
+///<reference path="../../typings.d.ts"/>
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+// added to beable to use http
+var http_1 = require('@angular/http');
+var app_component_1 = require("./app.component");
+platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
+    http_1.HTTP_PROVIDERS
+]);
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJvb3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLHlDQUF5QztBQUN6Qyx5Q0FBMEIsbUNBQW1DLENBQUMsQ0FBQTtBQUM5RCw4QkFBOEI7QUFDOUIscUJBQStCLGVBQWUsQ0FBQyxDQUFBO0FBQy9DLDhCQUE2QixpQkFBaUIsQ0FBQyxDQUFBO0FBRS9DLG9DQUFTLENBQUMsNEJBQVksRUFBRTtJQUNwQixxQkFBYztDQUNqQixDQUFDLENBQUMiLCJmaWxlIjoiYm9vdC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vLzxyZWZlcmVuY2UgcGF0aD1cIi4uLy4uL3R5cGluZ3MuZC50c1wiLz5cbmltcG9ydCB7IGJvb3RzdHJhcCB9IGZyb20gJ0Bhbmd1bGFyL3BsYXRmb3JtLWJyb3dzZXItZHluYW1pYyc7XG4vLyBhZGRlZCB0byBiZWFibGUgdG8gdXNlIGh0dHBcbmltcG9ydCB7IEhUVFBfUFJPVklERVJTIH0gZnJvbSAnQGFuZ3VsYXIvaHR0cCc7XG5pbXBvcnQgeyBBcHBDb21wb25lbnQgfSBmcm9tIFwiLi9hcHAuY29tcG9uZW50XCI7XG5cbmJvb3RzdHJhcChBcHBDb21wb25lbnQsIFtcbiAgICBIVFRQX1BST1ZJREVSU1xuXSk7Il19

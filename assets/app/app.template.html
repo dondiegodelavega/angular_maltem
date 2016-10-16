@@ -1,0 +1,96 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Pokedex</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText">
+                </div>
+            </form>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SORT <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">ID A-Z</a></li>
+                        <li><a href="#">ID Z-A</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Name A-Z</a></li>
+                        <li><a href="#">Name Z-A</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Type A-Z</a></li>
+                        <li><a href="#">Type Z-A</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-push-4">
+            <div class="well">
+                <img class="img-responsive" id="mainImage" src="./images/img/{{ pokemon.img }}.png">
+            </div>
+            <div class="well">
+                <h1 id="pokemonName">{{pokemon.id}} {{pokemon.ename}}</h1>
+                <hr/>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Attack</td>
+                            <td>{{pokemonBase.Attack}}</td>
+                            <td>Defense</td>
+                            <td>{{pokemonBase.Defense}}</td>
+                        </tr>
+                        <tr>
+                            <td>HP</td>
+                            <td>{{pokemonBase.HP}}</td>
+                            <td>Speed</td>
+                            <td>{{pokemonBase.Speed}}</td>
+                        </tr>
+                        <tr>
+                            <td>Sp.Atk</td>
+                            <td>{{pokemonBase['Sp.Atk']}}</td>
+                            <td>Sp.Def</td>
+                            <td>{{pokemonBase['Sp.Def']}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-pull-8" id="pokemonsContainer">
+            <div class="well" id="pokemonCard" *ngFor="let pokemon of pokemons | searchPipe: searchText" (click)="onPokemonClicked(pokemon.id)">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <img class="img-responsive" src="./images/thm/{{ pokemon.thm }}.png">
+                    </div>
+                    <div class="col-xs-7">
+                        <h3>{{ pokemon.id}}</h3>
+                        <h2>{{ pokemon.ename}}</h2>
+                        <h5 >Type : <span *ngFor="let type of pokemon.types">{ {{ type[0].ename}} } </span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
